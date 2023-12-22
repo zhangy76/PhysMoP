@@ -74,11 +74,11 @@ python eval.py --checkpoint CHECKPOINT_PATH
 ```
 
 After code re-organization, we re-produced the results as
-```
+
 |  AMASS-Test  |   80ms |  160ms |  320ms |  400ms |  560ms |  720ms |  880ms | 1000ms |
 | ------------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 |  MPJPE (mm)  |    0.4 |    2.0 |    9.4 |   14.2 |   24.4 |   36.1 |   48.0 |   61.9 |
-```
+
 The evaluated checkpoint, which includes model weights and training log, can be downloaded via [FINAL_MODEL](https://www.dropbox.com/scl/fi/qfovsy30net1wt2zl04bw/2023_12_21-17_09_24_20364.pt?rlkey=2phz52d26p2w2hbtx50o89c50&dl=0).
 
 ## Citation
