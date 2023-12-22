@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ```
 
 ### 3D Human Model 
-Please download [SMPL model](https://www.dropbox.com/scl/fi/kosyc0onvvkykdpq2w69e/processed_basicModel_neutral_lbs_10_207_0_v1.0.0.pkl?rlkey=qrrqr96nbpnux86qi1wfxj9sf&dl=0) and [SMPL-H model](https://download.is.tue.mpg.de/download.php?domain=mano&resume=1&sfile=smplh.tar.xz), and store them under the current directory as 
+Please download [SMPL](https://www.dropbox.com/scl/fi/kosyc0onvvkykdpq2w69e/processed_basicModel_neutral_lbs_10_207_0_v1.0.0.pkl?rlkey=qrrqr96nbpnux86qi1wfxj9sf&dl=0) and [SMPL-H](https://download.is.tue.mpg.de/download.php?domain=mano&resume=1&sfile=smplh.tar.xz), and store them under the current directory as 
 ```
 |--dataset
 |  |--smpl_official
@@ -30,9 +30,9 @@ Please download [SMPL model](https://www.dropbox.com/scl/fi/kosyc0onvvkykdpq2w69
 ```
 
 ## PhysMoP Model Training & Evaluation
-Please follow the following procedure to perform experiments on AMASS.
+Please follow the procedure below to conduct the experiments on AMASS.
 ### Data Preparation
-Download the raw 3D motion sequences from [AMASS](https://amass.is.tue.mpg.de/) (similarly for [Human3.6M](https://drive.google.com/drive/folders/1ySxiuTCSdUEqbgTcx7bx02uMglPOkKjc?usp=sharing) and [3DPW](https://virtualhumans.mpi-inf.mpg.de/3DPW/)), and store them under the current directory as 
+Download the raw 3D motion sequence data from [AMASS](https://amass.is.tue.mpg.de/) (should be similar for [Human3.6M](https://drive.google.com/drive/folders/1ySxiuTCSdUEqbgTcx7bx02uMglPOkKjc?usp=sharing) and [3DPW](https://virtualhumans.mpi-inf.mpg.de/3DPW/)), and store them under the current directory as 
 ```
 |--dataset
 |  |--data_raw
@@ -65,17 +65,20 @@ python train_script.py --name data_physics --data True --physics True --pretrain
 ```
 python train_script.py --name data_physics_fusion --data True --physics True --fix_weight True --fusion True --pretrained_checkpoint PHYSICS_CHECKPOINT --keypoint_loss_weight_physics_gt 1 --pose_loss_weight_physics_gt 2 --num_epochs 2 --keypoint_loss_weight_data 1 --pose_loss_weight_data 2 --keypoint_loss_weight_fusion 1 --pose_loss_weight_fusion 2 
 ```
+The saved model checkpoint can be found at './logs'.
 
 ### Evaluation
-To evaluate a trained model CHECKPOINT_PATH, please run
+To evaluate a model saved at CHECKPOINT_PATH, please run
 ```
 python eval.py --checkpoint CHECKPOINT_PATH
 ```
 
-After code re-organization, the re-produced results (the checkpoint with model weights and training log can be downloaded via [FINAL_MODEL](https://www.dropbox.com/scl/fi/qfovsy30net1wt2zl04bw/2023_12_21-17_09_24_20364.pt?rlkey=2phz52d26p2w2hbtx50o89c50&dl=0))) are
+After code re-organization, we re-produced the results (the checkpoint with model weights and training log can be downloaded via [FINAL_MODEL](https://www.dropbox.com/scl/fi/qfovsy30net1wt2zl04bw/2023_12_21-17_09_24_20364.pt?rlkey=2phz52d26p2w2hbtx50o89c50&dl=0))) as
+```
 |  AMASS-Test  |  80ms | 160ms | 320ms | 400ms | 560ms | 720ms | 880ms | 1000ms |
 |  MPJPE (mm)  |   0.4 |   2.0 |   9.4 |  14.2 |  24.4 |  36.1 |  48.0 |   61.9 |
 
+```
 
 ## Citation
 If you find our work useful, please consider citing the paper:
