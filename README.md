@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ```
 
 ### 3D Human Model 
-Please download [SMPL](https://www.dropbox.com/scl/fi/kosyc0onvvkykdpq2w69e/processed_basicModel_neutral_lbs_10_207_0_v1.0.0.pkl?rlkey=qrrqr96nbpnux86qi1wfxj9sf&dl=0) and [SMPL-H](https://download.is.tue.mpg.de/download.php?domain=mano&resume=1&sfile=smplh.tar.xz), and store them under the current directory as 
+Please download SMPL and SMPL-H (due to license restrictions, please download the files from the [official website](https://github.com/vchoutas/smplx)), and store them under the current directory as 
 ```
 |--dataset
 |  |--smpl_official
