@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ```
 
 ### 3D Human Model 
-Please download SMPL and SMPL-H (due to license restrictions, please download them from the [official website](https://smpl-x.is.tue.mpg.de/), and store them under the current directory as 
+Please download SMPL and SMPL-H (due to license restrictions, please download them from the [official website](https://smpl-x.is.tue.mpg.de/)), and store them under the current directory as 
 ```
 |--dataset
 |  |--smpl_official
